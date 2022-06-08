@@ -1,0 +1,40 @@
+---
+- name: nome em branco
+  payload:
+    name: ''
+    email: mateus@gmail.com
+    password: 'pwd123'
+  code: 412
+  error: required name
+- name: sem campo nome
+  payload:
+    email: mateus@gmail.com
+    password: 'pwd123'
+  code: 412
+  error: required name
+- name: email em branco
+  payload:
+    name: 'Mateus'
+    email: ''
+    password: 'pwd123'
+  code: 412
+  error: required email
+- name: sem campo email
+  payload:
+    name: 'Mateus'
+    password: 'pwd123'
+  code: 412
+  error: required email
+- name: senha em branco
+  payload:
+    name: 'Mateus'
+    email: mateus@gmail.com
+    password: ''
+  code: 412
+  error: required password
+- name: sem campo senha
+  payload:
+    name: 'Mateus'
+    email: mateus@gmail.com
+  code: 412
+  error: required password

@@ -1,0 +1,35 @@
+---
+- name: senha inválida
+  payload:
+    email: mateus@yahoo.com
+    password: '123456'
+  code: 401
+  error: Unauthorized
+- name: usuário nao existe
+  payload:
+    email: 404@yahoo.com
+    password: '123456'
+  code: 401
+  error: Unauthorized
+- name: email em branco
+  payload:
+    email: ''
+    password: '123456'
+  code: 412
+  error: required email
+- name: sem email
+  payload:
+    password: '123456'
+  code: 412
+  error: required email
+- name: senha em branco
+  payload:
+    email: mateus@yahoo.com
+    password: ''
+  code: 412
+  error: required password
+- name: sem senha
+  payload:
+    email: mateus@yahoo.com
+  code: 412
+  error: required password
