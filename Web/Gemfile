@@ -15,3 +15,5 @@ gem "faker", "2.14"
 gem "mongo", "2.13.1"
 
 gem "allure-cucumber", "2.13.6.4"
+
+gem "httparty", "0.18.1"

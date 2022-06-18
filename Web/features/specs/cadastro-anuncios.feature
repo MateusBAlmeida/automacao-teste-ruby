@@ -6,7 +6,7 @@ Funcionalidade: Cadastro de Anúncios
     Para que eu possa disponibiliza-los para locação
 
     Contexto: Login
-        * Login com "mateus@email.com" e "pwd123"
+        * Login com "mateus@yahoo.com" e "pwd123"
 
     Cenário: Novo equipo
 
@@ -19,7 +19,6 @@ Funcionalidade: Cadastro de Anúncios
         Quando submeto o cadastrado desse item
         Então devo ver esse item no meu Dashboard
 
-    @temp
     Esquema do Cenário: Tentativa de cadastro de anúncios
 
         Dado que acesso o formulário de cadastrado de anúncios
