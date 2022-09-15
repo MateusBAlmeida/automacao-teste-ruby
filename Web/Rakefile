@@ -29,12 +29,22 @@ task :local_seeds do
       email: "spider@hotmail.com",
       password: to_md5("pwd123"),
     },
+    {
+      name: "João Anunciante",
+      email: "joao@anunciante.com",
+      password: to_md5("pwd123"),
+    },
+    {
+      name: "Maria Locatária",
+      email: "maria@locataria.com",
+      password: to_md5("pwd123"),
+    },
   ]
 
   MongoDB.new.drop_danger
   MongoDB.new.insert_users(users)
 
-  # sh "cucumber"
+  sh "cucumber"
 end
 
 task :hmg_seeds do
