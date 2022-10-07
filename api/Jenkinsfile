@@ -14,6 +14,7 @@ pipeline {
         stage('Testing') {
             steps {
                 sh 'cd api && rspec'
+                junit 'api/logs/report.xml'
             }
         }
     }
