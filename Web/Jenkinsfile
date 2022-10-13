@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Prep'){
             steps {
-                sh 'cd web && bundle install'
+                sh 'cd Web && bundle install'
             }
         }
         stage('Testing') {
