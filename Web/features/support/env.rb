@@ -9,7 +9,16 @@ case ENV["BROWSER"]
 when "firefox"
   @driver = :selenium
 when "fire_headless"
-  @driver = :selenium_headless
+  Capybara.register_driver :selenium_headless do |app|
+    version = Capybara::Selenium::Driver.load_selenium
+    options_key = Capybara::Selenium::Driver::CAPS_VERSION.satisfied_by?(version) ? :capabilities : :options
+    browser_options = ::Selenium::WebDriver::Firefox::Options.new.tap do |opts|
+      opts.add_argument '-headless'
+      opts.args << '--no-sandbox'
+      opts.args << '--disable-dev-shm-usage'
+    end
+    Capybara::Selenium::Driver.new(app, **{ :browser => :firefox, options_key => browser_options })
+  end
 when "chrome"
   @driver = :selenium_chrome
 when "chrome_headless"
