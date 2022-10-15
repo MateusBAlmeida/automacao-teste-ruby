@@ -31,7 +31,7 @@ pipeline {
     }
     post {
         always {
-            echo 'ToDo'
+            allure includeProperties: false, jdk: '', results: [[path: 'Web/logs']]
         }
     }
 }
